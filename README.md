@@ -1,6 +1,9 @@
 # InsultGenerator
 Just a stupid little insult generator.
 
+### Notice: Delivered as is.
+Have fun with this. I would not suggest putting this on the internet as is. 
+
 # Usage
 1. `git clone` this repository
 2. cd into the InsultGenerator folder
