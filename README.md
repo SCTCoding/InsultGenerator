@@ -13,7 +13,7 @@ Have fun with this. I would not suggest putting this on the internet as is.
 You may have issues with the build if you aren't signed into Docker. You can sign in or you can simply pull the base image with: `docker pull python:3.9-slim`
 
 # Operation
-Refresh the page to get a new insult. Or you can use curl or similar to return the insult as a json respone using the /api endpoint.
+Refresh the page to get a new insult. Or you can use curl or similar to return the insult as a json respone using the /api endpoint. If you got to /last10 you can get json output of the last 10 insults.
 
 # Heroku
 You can easily spin this up in Heroku if desired since this is just an extremely basic Flask app. In the current state the app is not desinged to be exposed to the internet so keep that in mind if you decide to.
