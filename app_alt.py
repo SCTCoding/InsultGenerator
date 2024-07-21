@@ -17,12 +17,12 @@ def store_response(response):
 
 @app.route('/', methods=['GET'])
 def main():
-	word1 = random.choice(adj)
-	word2 = random.choice([item for item in adj if item != first_choice])
-	word3 = random.choice(nouns)
-	response = f'{word1} {word2} {word3}'
+    word1 = random.choice(adj)
+    word2 = random.choice([item for item in adj if item != first_choice])
+    word3 = random.choice(nouns)
+    response = f'{word1} {word2} {word3}'
 
-	store_response(response)
+    store_response(response)
 
     table_rows = ''.join(f'<tr><td>{r}</td></tr>' for r in last_responses)
     html_table = f'''
@@ -42,15 +42,15 @@ def main():
 
 @app.route('/api', methods=['GET'])
 def getInsult():
-	word1 = random.choice(adj)
-	word2 = random.choice([item for item in adj if item != first_choice])
-	word3 = random.choice(nouns)
+    word1 = random.choice(adj)
+    word2 = random.choice([item for item in adj if item != first_choice])
+    word3 = random.choice(nouns)
   
   data = [word1, word2, word3]
 
-	store_response(' '.join(data))
-		
-	return jsonify(data)
+    store_response(' '.join(data))
+        
+    return jsonify(data)
 
 @app.route('/last10', methods=['GET'])
 def get_last_10_responses():
@@ -63,4 +63,4 @@ def bad_request(error):
     return response
 
 if __name__ == '__main__':
-	main()
+    main()
