@@ -32,10 +32,10 @@ def main():
     table_rows = ''.join(f'<tr><td>{r}</td></tr>' for r in last_responses)
     html_table = f'''
     <h1>{response}</h1>
-    <h2>Last 10 Responses</h2>
+    <br>
     <table border="1">
         <thead>
-            <tr><th>Response</th></tr>
+            <tr><th>Last 10</th></tr>
         </thead>
         <tbody>
             {table_rows}
