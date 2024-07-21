@@ -24,6 +24,9 @@ def main():
 
 @app.route('/api', methods=['GET'])
 def getInsult():
+    word1 = random.choice(c1)
+    word2 = random.choice(c2)
+    word3 = random.choice(c3)
     data = [word1, word2, word3]  # Example data
     return jsonify(data)
 
