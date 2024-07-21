@@ -18,7 +18,7 @@ def store_response(response):
 @app.route('/', methods=['GET'])
 def main():
     word1 = random.choice(adj)
-    word2 = random.choice([item for item in adj if item != first_choice])
+    word2 = random.choice([item for item in adj if item != word1])
     word3 = random.choice(nouns)
     response = f'{word1} {word2} {word3}'
 
@@ -43,7 +43,7 @@ def main():
 @app.route('/api', methods=['GET'])
 def getInsult():
     word1 = random.choice(adj)
-    word2 = random.choice([item for item in adj if item != first_choice])
+    word2 = random.choice([item for item in adj if item != word1])
     word3 = random.choice(nouns)
   
     data = [word1, word2, word3]
