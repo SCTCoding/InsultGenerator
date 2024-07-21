@@ -1,6 +1,10 @@
 # InsultGenerator
 Just a stupid little insult generator.
 
+# How to play with this
+You can find a running version of this on Render [here](http://mudtosser.com/).
+It may take a while to respond. The server has to spin up if it has been idle too long. It can take up to 50 seconds to respond. You have been warned.
+
 ### Notice: Delivered as is.
 Have fun with this. I would not suggest putting this on the internet as is. 
 
