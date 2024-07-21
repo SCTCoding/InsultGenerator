@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import random
 
 app = Flask(__name__)
@@ -29,6 +29,12 @@ def getInsult():
     word3 = random.choice(c3)
     data = [word1, word2, word3]  # Example data
     return jsonify(data)
+
+@app.errorhandler(400)
+def bad_request(error):
+    response = jsonify({'error': 'Bad Request', 'message': str(error)})
+    response.status_code = 400
+    return response
 
 if __name__ == '__main__':
 	main()
