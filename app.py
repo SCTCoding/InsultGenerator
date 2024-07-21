@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from flask import Flask
+from flask import Flask jsonify
 import random
 
 app = Flask(__name__)
@@ -14,13 +14,18 @@ c2 = ["base-court", "bat-fowling", "beef-witted", "beetle-headed", "boil-brained
 c3 = ["apple-john", "baggage", "barnacle", "bladder", "boar-pig", "bugbear", "bum-bailey", "canker-blossom", "clack-dish", "clotpole", "coxcomb", "codpiece", "death-token", "dewberry", "flap-dragon", "flax-wench", "flirt-gill", "foot-licker", "fustilarian", "giglet", "gudgeon", "haggard", "harpy", "hedge-pig", "horn-beast", "hugger-mugger", "joithead", "lewdster", "lout", "maggot-pie", "malt-worm", "mammet", "measle", "minnow", "miscreant", "moldwarp", "mumble-news", "nut-hook", "pigeon-egg", "pignut", "puttock", "pumpion", "ratsbane", "scut", "skainsmate", "strumpet", "varlot", "vassal", "whey-face", "wagtail"]
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def main():
 	word1 = random.choice(c1)
 	word2 = random.choice(c2)
 	word3 = random.choice(c3)
 	
 	return f'<h1>{word1} {word2} {word3}</h1>'
+
+@app.route('/api', methods=['GET'])
+def getInsult():
+    data = [word1, word2, word3]  # Example data
+    return jsonify(data)
 
 if __name__ == '__main__':
 	main()
