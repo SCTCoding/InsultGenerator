@@ -29,7 +29,7 @@ def main():
 
 	store_response(response)
 	
-	return f'<h1>{word1} {word2} {word3}</h1>\n\n\n<h3'
+	return f'<h1>{word1} {word2} {word3}</h1>\n\n\n<h3>{last_responses}</h3>'
 
 @app.route('/api', methods=['GET'])
 def getInsult():
