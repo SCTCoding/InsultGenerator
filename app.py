@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template_string
 import random
 
 app = Flask(__name__)
@@ -28,8 +28,22 @@ def main():
 	response = f'{word1} {word2} {word3}'
 
 	store_response(response)
-	
-	return f'<h1>{word1} {word2} {word3}</h1>\n\n\n<h3>{last_responses}</h3>'
+
+    table_rows = ''.join(f'<tr><td>{r}</td></tr>' for r in last_responses)
+    html_table = f'''
+    <h1>{response}</h1>
+    <h2>Last 10 Responses</h2>
+    <table border="1">
+        <thead>
+            <tr><th>Response</th></tr>
+        </thead>
+        <tbody>
+            {table_rows}
+        </tbody>
+    </table>
+    '''
+    
+    return render_template_string(html_table)
 
 @app.route('/api', methods=['GET'])
 def getInsult():
