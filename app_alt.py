@@ -19,7 +19,7 @@ def store_response(response):
 def main():
 	word1 = random.choice(adj)
 	word2 = random.choice([item for item in adj if item != first_choice])
-	word3 = random.choice(noun)
+	word3 = random.choice(nouns)
 	response = f'{word1} {word2} {word3}'
 
 	store_response(response)
@@ -44,7 +44,7 @@ def main():
 def getInsult():
 	word1 = random.choice(adj)
 	word2 = random.choice([item for item in adj if item != first_choice])
-	word3 = random.choice(noun)
+	word3 = random.choice(nouns)
   
   data = [word1, word2, word3]
 
