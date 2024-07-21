@@ -46,7 +46,7 @@ def getInsult():
     word2 = random.choice([item for item in adj if item != first_choice])
     word3 = random.choice(nouns)
   
-  data = [word1, word2, word3]
+    data = [word1, word2, word3]
 
     store_response(' '.join(data))
         
